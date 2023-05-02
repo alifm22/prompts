@@ -1,0 +1,261 @@
+.Container {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.addContainer {
+	display: flex;
+	flex: 1;
+}
+
+.addButton {
+	width: 100%;
+	background-color: green;
+	color: #fff;
+	border: none;
+	font-weight: bolder;
+}
+
+.addButton:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.addButton:active {
+	opacity: 0.5;
+}
+
+.searchBox {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #333;
+	padding: 0 0 10px 0;
+}
+
+.searchBox h1 {
+	color: #fff;
+}
+
+.searchInput {
+	margin-left: 10px;
+	font-size: medium;
+}
+
+.promptList {
+	display: flex;
+	flex: 13;
+	flex-direction: column;
+	overflow-y: scroll;
+	list-style-type: none;
+	padding: 0 5px 0 15px;
+	margin: 0;
+}
+
+.promptList::-webkit-scrollbar {
+	width: 10px;
+	background-color: #aaa;
+}
+.promptList::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #555;
+}
+.modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+}
+
+.modalContent {
+	background-color: #eee;
+	padding: 20px;
+	margin: auto;
+	width: 70%;
+}
+
+.searchBoxContainer {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+}
+
+.searchBoxContainer span {
+	color: #fff;
+}
+
+.searchBoxContainer input {
+	width: 60%;
+	height: 85%;
+}
+
+.searchBoxContainer button {
+	border: none;
+	height: 100%;
+	background-color: #fff;
+}
+
+.searchBoxContainer button:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+
+.searchBoxContainer button:active {
+	background-color: #ddd;
+}
+
+.modalContent form {
+	display: flex;
+	flex-direction: column;
+}
+
+.modalContent form label {
+	display: flex;
+	align-items: top;
+}
+
+.modalContent form label input {
+	border-radius: 5px;
+	border: #333 1px solid;
+	padding: 0 10px;
+}
+
+.modalContent form label textarea {
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.modalContent label {
+	display: flex;
+}
+.modalContent span {
+	flex: 1;
+}
+.modalContent input {
+	flex: 7;
+	min-height: 30px;
+}
+.modalContent button {
+	width: 100%;
+	background-color: red;
+	color: #fff;
+	border: transparent 1px solid;
+	padding: 3px;
+	cursor: pointer;
+}
+.modalContent button:hover {
+	opacity: 0.8;
+}
+
+.modalContent button:active {
+	opacity: 0.8;
+}
+.modalContent textarea {
+	flex: 7;
+	min-height: 200px;
+}
+.addPromptBtnContainer button {
+	width: 100%;
+	background-color: green;
+	color: #fff;
+	border: transparent 1px solid;
+	padding: 3px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.addPromptBtnContainer button:hover {
+	opacity: 0.9;
+}
+
+.addPromptBtnContainer button:active {
+	opacity: 0.8;
+}
+
+.listItem .titleContainer h3 {
+	overflow-wrap: break-word;
+	padding: 5px 20px;
+	margin-bottom: 0;
+}
+.listItem .titleContainer {
+	background-color: #333;
+	color: #fff;
+	position: relative;
+	user-select: none;
+}
+
+.listItem .titleContainer:hover {
+	cursor: pointer;
+}
+
+.listItem .titleContainer:active {
+	background-color: #444;
+}
+
+.listItem .titleContainer svg {
+	position: absolute;
+	right: 2%;
+	top: 30%;
+}
+
+.listItem p {
+	background-color: #eee;
+}
+
+.promptBodyContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.promptBodyContainer p {
+	overflow-wrap: break-word;
+	text-align: justify;
+	padding: 20px 20px;
+	margin: 0;
+}
+
+.promptBodyContainer span {
+	background-color: #454545;
+	color: #fff;
+	padding: 1px 20px;
+}
+
+.promptActionsContainer {
+	display: flex;
+}
+.promptActionsContainer button {
+	flex: 1;
+	border: none;
+	padding: 10px 0;
+	border-top: #aaa 2px solid;
+}
+.promptActionsContainer button:hover {
+	background-color: #ddd;
+}
+
+.promptActionsContainer button:active {
+	background-color: #ccc;
+}
+
+.promptActionsContainer button svg {
+	flex: 1;
+	border: none;
+	padding: 0px 5px;
+}
+.promptActionsContainer .edit {
+	color: orange;
+}
+.promptActionsContainer .copy {
+	color: green;
+}
+.promptActionsContainer .delete {
+	color: red;
+}
