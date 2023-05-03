@@ -18,7 +18,7 @@ const promptsSlice = createSlice({
 		},
 		editPrompt: (state, action) => {
 			const idx = state.findIndex(
-				(obj) => JSON.parse(obj).id == action.payload.id
+				(obj) => JSON.parse(obj).id === action.payload.id
 			);
 			state[idx] = JSON.stringify({
 				id: state[idx],
@@ -31,7 +31,7 @@ const promptsSlice = createSlice({
 		deletePrompt: (state, action) => {
 			// console.log(action.payload);
 			return state.filter(
-				(prompt) => JSON.parse(prompt).id != action.payload.id
+				(prompt) => JSON.parse(prompt).id !== action.payload.id
 			);
 
 			// console.log(state);

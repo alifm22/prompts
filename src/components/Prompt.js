@@ -12,7 +12,7 @@ import {
 	faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { deletePrompt, editPrompt } from "../redux/promptSlice";
+import { deletePrompt } from "../redux/promptSlice";
 import EditPrompt from "./EditPrompt";
 
 const Prompt = ({ prompt }) => {

@@ -14,7 +14,7 @@ const AddPrompt = ({ setHideForm }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		setVerified(true);
-		if (title == "" || text == "" || contributor == "") return;
+		if (title === "" || text === "" || contributor === "") return;
 		dispatch(
 			addPrompt({
 				id: uuidv4(),
@@ -33,7 +33,7 @@ const AddPrompt = ({ setHideForm }) => {
 			<label>
 				<input
 					className={
-						varified && contributor == "" ? "emptyField" : null
+						varified && contributor === "" ? "emptyField" : null
 					}
 					type="text"
 					placeholder="Name of the contributor..."
@@ -44,7 +44,7 @@ const AddPrompt = ({ setHideForm }) => {
 			<br />
 			<label>
 				<input
-					className={varified && title == "" ? "emptyField" : null}
+					className={varified && title === "" ? "emptyField" : null}
 					type="text"
 					placeholder="Set a title for the prompt"
 					value={title}
@@ -54,7 +54,7 @@ const AddPrompt = ({ setHideForm }) => {
 			<br />
 			<label>
 				<textarea
-					className={varified && text == "" ? "emptyField" : null}
+					className={varified && text === "" ? "emptyField" : null}
 					placeholder="Enter the exact prompt here..."
 					value={text}
 					onChange={(event) => setText(event.target.value)}

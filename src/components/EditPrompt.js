@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPrompt, editPrompt } from "../redux/promptSlice";
+import { editPrompt } from "../redux/promptSlice";
 import "./Styles.css";
-const { v4: uuidv4 } = require("uuid");
 
 const EditPrompt = ({ prompt, setHideForm }) => {
 	const [title, setTitle] = useState("");
@@ -15,9 +14,9 @@ const EditPrompt = ({ prompt, setHideForm }) => {
 		event.preventDefault();
 		setVerified(true);
 		if (
-			title == prompt.title &&
-			text == prompt.text &&
-			contributor == prompt.contributor
+			title === prompt.title &&
+			text === prompt.text &&
+			contributor === prompt.contributor
 		)
 			return;
 		dispatch(
@@ -37,14 +36,14 @@ const EditPrompt = ({ prompt, setHideForm }) => {
 		setTitle(prompt.title);
 		setText(prompt.text);
 		setContributor(prompt.contributor);
-	}, []);
+	}, [prompt]);
 
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>
 				<input
 					className={
-						varified && contributor == prompt.contributor
+						varified && contributor === prompt.contributor
 							? "emptyField"
 							: null
 					}
@@ -58,7 +57,7 @@ const EditPrompt = ({ prompt, setHideForm }) => {
 			<label>
 				<input
 					className={
-						varified && title == prompt.title ? "emptyField" : null
+						varified && title === prompt.title ? "emptyField" : null
 					}
 					type="text"
 					placeholder="Set a title for the prompt"
@@ -70,7 +69,7 @@ const EditPrompt = ({ prompt, setHideForm }) => {
 			<label>
 				<textarea
 					className={
-						varified && text == prompt.text ? "emptyField" : null
+						varified && text === prompt.text ? "emptyField" : null
 					}
 					placeholder="Enter the exact prompt here..."
 					value={text}
