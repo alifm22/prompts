@@ -9,6 +9,10 @@
 	flex: 1;
 }
 
+.emptyField {
+	border: red 2px solid !important;
+}
+
 .addButton {
 	width: 100%;
 	background-color: green;
@@ -72,6 +76,7 @@
 	background-color: rgba(0, 0, 0, 0.5);
 	display: flex;
 	align-items: center;
+	z-index: 9999;
 }
 
 .modalContent {
@@ -79,6 +84,7 @@
 	padding: 20px;
 	margin: auto;
 	width: 70%;
+	z-index: 9999;
 }
 
 .searchBoxContainer {
@@ -145,14 +151,15 @@
 }
 .modalContent button {
 	width: 100%;
-	background-color: red;
-	color: #fff;
-	border: transparent 1px solid;
+	/* background-color: red; */
+	color: red;
+	border: red 2px solid;
 	padding: 3px;
 	cursor: pointer;
 }
 .modalContent button:hover {
-	opacity: 0.8;
+	background-color: red;
+	color: white;
 }
 
 .modalContent button:active {
@@ -164,16 +171,39 @@
 }
 .addPromptBtnContainer button {
 	width: 100%;
-	background-color: green;
-	color: #fff;
-	border: transparent 1px solid;
+	/* background-color: green; */
+	color: green;
+	border: green 3px solid;
 	padding: 3px;
 	margin-bottom: 5px;
 	cursor: pointer;
 }
 
+.deleteModalContainer button {
+	width: 100%;
+	/* background-color: green; */
+	color: green;
+	border: green 3px solid;
+	padding: 3px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.deleteModalContainer {
+	background-color: #eee;
+}
+.deleteModalContainer button:hover {
+	background-color: green;
+	color: white;
+}
+
+.deleteModalContainer h3 {
+	width: 100%;
+	text-align: center;
+}
+
 .addPromptBtnContainer button:hover {
-	opacity: 0.9;
+	background-color: green;
+	color: white;
 }
 
 .addPromptBtnContainer button:active {

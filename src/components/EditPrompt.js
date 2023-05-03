@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPrompt } from "../redux/promptSlice";
+import { addPrompt, editPrompt } from "../redux/promptSlice";
 import "./Styles.css";
 const { v4: uuidv4 } = require("uuid");
 
-const AddPrompt = ({ setHideForm }) => {
+const EditPrompt = ({ prompt, setHideForm }) => {
 	const [title, setTitle] = useState("");
 	const [text, setText] = useState("");
 	const [contributor, setContributor] = useState("");
@@ -14,10 +14,15 @@ const AddPrompt = ({ setHideForm }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		setVerified(true);
-		if (title == "" || text == "" || contributor == "") return;
+		if (
+			title == prompt.title &&
+			text == prompt.text &&
+			contributor == prompt.contributor
+		)
+			return;
 		dispatch(
-			addPrompt({
-				id: uuidv4(),
+			editPrompt({
+				id: prompt.id,
 				title: title,
 				text: text,
 				contributor: contributor,
@@ -28,12 +33,20 @@ const AddPrompt = ({ setHideForm }) => {
 		setHideForm(false);
 	};
 
+	useEffect(() => {
+		setTitle(prompt.title);
+		setText(prompt.text);
+		setContributor(prompt.contributor);
+	}, []);
+
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>
 				<input
 					className={
-						varified && contributor == "" ? "emptyField" : null
+						varified && contributor == prompt.contributor
+							? "emptyField"
+							: null
 					}
 					type="text"
 					placeholder="Name of the contributor..."
@@ -44,7 +57,9 @@ const AddPrompt = ({ setHideForm }) => {
 			<br />
 			<label>
 				<input
-					className={varified && title == "" ? "emptyField" : null}
+					className={
+						varified && title == prompt.title ? "emptyField" : null
+					}
 					type="text"
 					placeholder="Set a title for the prompt"
 					value={title}
@@ -54,7 +69,9 @@ const AddPrompt = ({ setHideForm }) => {
 			<br />
 			<label>
 				<textarea
-					className={varified && text == "" ? "emptyField" : null}
+					className={
+						varified && text == prompt.text ? "emptyField" : null
+					}
 					placeholder="Enter the exact prompt here..."
 					value={text}
 					onChange={(event) => setText(event.target.value)}
@@ -62,10 +79,10 @@ const AddPrompt = ({ setHideForm }) => {
 			</label>
 			<br />
 			<div className="addPromptBtnContainer">
-				<button type="submit">Add Prompt</button>
+				<button type="submit">Edit Prompt</button>
 			</div>
 		</form>
 	);
 };
 
-export default AddPrompt;
+export default EditPrompt;

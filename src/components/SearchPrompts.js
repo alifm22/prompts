@@ -54,7 +54,7 @@ const SearchPrompts = () => {
 				</button>
 			</div>
 			{showModal && (
-				<Modal onClose={() => setShowModal(false)}>
+				<Modal onClose={() => setShowModal(false)} label={"Close"}>
 					<AddPrompt setHideForm={setShowModal} />
 				</Modal>
 			)}

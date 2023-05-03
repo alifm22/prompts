@@ -12,6 +12,7 @@ const promptsSlice = createSlice({
 					id: action.payload.id,
 					title: action.payload.title,
 					text: action.payload.text,
+					contributor: action.payload.contributor,
 				})
 			);
 		},
@@ -21,10 +22,10 @@ const promptsSlice = createSlice({
 			);
 			state[idx] = JSON.stringify({
 				id: state[idx],
-				title: "This is edited title!",
-				text: "Who has time for long text placeholder?!!!! Who has time for long text placeholder?!!!! Who has time for long text placeholder?!!!! Who has time for long text placeholder?!!!! Who has time for long text placeholder?!!!!",
+				title: action.payload.title,
+				text: action.payload.text,
+				contributor: action.payload.contributor,
 			});
-			console.log(state[idx]);
 			// Add code to handle editing a prompt here
 		},
 		deletePrompt: (state, action) => {
